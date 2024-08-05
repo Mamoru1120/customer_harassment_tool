@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>クレームによる損失分析ツール</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<header>
+<h1>Analysis on customer harassment</h1>
+</header>
+<main>
+
+    <h2>入力フォーム</h2>
+
+    <table id="input_form">
+        <tr>
+            <th>日付</th>
+            <td><input id="date" type="date" max="2999-12-31"></td>
+        </tr>
+        <tr>
+            <th>対応に要した時間</th>
+            <td><input id="time" type="number" min="0", max="9999999">分</td>
+        </tr>
+
+        <tr>
+            <th>クレームの内容</th>
+            <td><textarea id="clame_content"></textarea></td>
+        </tr>
+
+        <tr>
+            <th>対応方法</th>
+            <td><textarea id="response_content"></textarea></td>
+        </tr>
+    </table>
+
+    <div id="ctr_button">
+        <button id="save">Save</button>
+        <button id="clear">Clear</button>
+    </div>
+
+    <h2>クレーム記録</h2>
+
+    <table id="list">
+        <tr><th>No.</th><th>日付</th><th>対応に要した時間</th><th>クレーム内容</th><th>対応方法</th></tr>
+        <!-- ここに追加データが挿入される -->
+    </table>
+    
+
+    <h2>対応に要した時間の割合</h2>
+
+    <div id="analysis">
+        <table id="ratio">
+            <tr><th>対応に要した時間</th><th>割合</th></tr>
+            <tr><td>0~10分</td><td id="rnumber1">%</td></tr>
+            <tr><td>11~20分</td><td id="rnumber2">%</td></tr>
+            <tr><td>21~30分</td><td id="rnumber3">%</td></tr>
+            <tr><td>31~40分</td><td id="rnumber4">%</td></tr>
+            <tr><td>41~50分</td><td id="rnumber5">%</td></tr>
+            <tr><td>51~60分</td><td id="rnumber6">%</td></tr>
+            <tr><td>61~70分</td><td id="rnumber7">%</td></tr>
+            <tr><td>71~80分</td><td id="rnumber8">%</td></tr>
+            <tr><td>81~90分</td><td id="rnumber9">%</td></tr>
+            <tr><td>91~100分</td><td id="rnumber10">%</td></tr>
+            <tr><td>101~110分</td><td id="rnumber11">%</td></tr>
+            <tr><td>111~120分</td><td id="rnumber12">%</td></tr>
+            <tr><td>121~130分</td><td id="rnumber13">%</td></tr>
+            <tr><td>131~140分</td><td id="rnumber14">%</td></tr>
+            <tr><td>141~150分</td><td id="rnumber15">%</td></tr>
+            <tr><td>151~160分</td><td id="rnumber16">%</td></tr>
+            <tr><td>161~170分</td><td id="rnumber17">%</td></tr>
+            <tr><td>171~180分</td><td id="rnumber18">%</td></tr>
+            <tr><td>181~190分</td><td id="rnumber19">%</td></tr>
+            <tr><td>191~200分</td><td id="rnumber20">%</td></tr>
+            <tr><td>201~210分</td><td id="rnumber21">%</td></tr>
+            <tr><td>211~220分</td><td id="rnumber22">%</td></tr>
+            <tr><td>221~230分</td><td id="rnumber23">%</td></tr>
+            <tr><td>231~240分</td><td id="rnumber24">%</td></tr>
+            <tr><td>241~250分</td><td id="rnumber25">%</td></tr>
+            <tr><td>251~260分</td><td id="rnumber26">%</td></tr>
+            <tr><td>261~270分</td><td id="rnumber27">%</td></tr>
+            <tr><td>271~280分</td><td id="rnumber28">%</td></tr>
+            <tr><td>281~290分</td><td id="rnumber29">%</td></tr>
+            <tr><td>291~300分</td><td id="rnumber30">%</td></tr>
+    
+        </table>
+
+        <div id="bar-graph" class="content">
+            <div class="bar-graph-wrap">
+              <div class="graph1">
+                <span class="name">0~10分</span>
+                <span class="number" id="number1">%</span>
+              </div>
+              <div class="graph2">
+                <span class="name">11~20分</span>
+                <span class="number" id="number2">%</span>
+              </div>
+              <div class="graph3">
+                <span class="name">21~30分</span>
+                <span class="number"id="number3">%</span>
+              </div>
+              <div class="graph4">
+                <span class="name">31~40分</span>
+                <span class="number" id="number4">%</span>
+              </div>
+              <div class="graph5">
+                <span class="name">41~50分</span>
+                <span class="number" id="number5">%</span>
+              </div>
+              <div class="graph6">
+                <span class="name">51~60分</span>
+                <span class="number" id="number6">%</span>
+              </div>
+              <div class="graph7">
+                <span class="name">61~70分</span>
+                <span class="number" id="number7">%</span>
+              </div>
+              <div class="graph8">
+                <span class="name">71~80分</span>
+                <span class="number" id="number8">%</span>
+              </div>
+              <div class="graph9">
+                <span class="name">81~90分</span>
+                <span class="number" id="number9">%</span>
+              </div>
+              <div class="graph10">
+                <span class="name">91~100分</span>
+                <span class="number" id="number10">%</span>
+              </div>
+              <div class="graph11">
+                <span class="name">101~110分</span>
+                <span class="number" id="number11">%</span>
+              </div>
+              <div class="graph12">
+                <span class="name">111~120分</span>
+                <span class="number" id="number12">%</span>
+              </div>
+              <div class="graph13">
+                <span class="name">121~130分</span>
+                <span class="number" id="number13">%</span>
+              </div>
+              <div class="graph14">
+                <span class="name">131~140分</span>
+                <span class="number" id="number14">%</span>
+              </div>
+              <div class="graph15">
+                <span class="name">141~150分</span>
+                <span class="number" id="number15">%</span>
+              </div>
+              <div class="graph16">
+                <span class="name">151~160分</span>
+                <span class="number" id="number16">%</span>
+              </div>
+              <div class="graph17">
+                <span class="name">161~170分</span>
+                <span class="number" id="number17">%</span>
+              </div>
+              <div class="graph18">
+                <span class="name">171~180分</span>
+                <span class="number" id="number18">%</span>
+              </div>
+              <div class="graph19">
+                <span class="name">181~190分</span>
+                <span class="number" id="number19">%</span>
+              </div>
+              <div class="graph20">
+                <span class="name">191~200分</span>
+                <span class="number" id="number20">%</span>
+              </div>
+              <div class="graph21">
+                <span class="name">201~210分</span>
+                <span class="number" id="number21">%</span>
+              </div>
+              <div class="graph22">
+                <span class="name">211~220分</span>
+                <span class="number" id="number22">%</span>
+              </div>
+              <div class="graph23">
+                <span class="name">221~230分</span>
+                <span class="number" id="number23">%</span>
+              </div>
+              <div class="graph24">
+                <span class="name">231~240分</span>
+                <span class="number" id="number24">%</span>
+              </div>
+              <div class="graph25">
+                <span class="name">241~250分</span>
+                <span class="number" id="number25">%</span>
+              </div>
+              <div class="graph26">
+                <span class="name">251~260分</span>
+                <span class="number" id="number26">%</span>
+              </div>
+              <div class="graph27">
+                <span class="name">261~270分</span>
+                <span class="number" id="number27">%</span>
+              </div>
+              <div class="graph28">
+                <span class="name">271~280分</span>
+                <span class="number" id="number28">%</span>
+              </div>
+              <div class="graph29">
+                <span class="name">281~290分</span>
+                <span class="number" id="number29">%</span>
+              </div>
+              <div class="graph30">
+                <span class="name">291~300分</span>
+                <span class="number" id="number30">%</span>
+              </div>
+            </div>
+        </div>
+
+    </div>
+        
+
+
+    
+</main>
+
+
+<script>
+
+//グローバル変数
+let number = 30;
+let row_index = 1;
+let step = 10;
+
+//複数のアイテムのうち1つをローカルストレージから引き出す関数
+function get_multiple_item(row_index){
+
+    let value = [];
+    let item = [];
+    for(let i=1; i<=localStorage.length; i++){
+        let stabilizearray = localStorage.getItem(i);
+        value = JSON.parse(stabilizearray);
+        item.push(value[row_index]);
+    }
+    return item;
+}
+
+//あるデータをどの範囲に含まれているかカウントする関数
+function count_per_area(value, step, number){
+
+    let count = [];
+
+    for(let l=0; l<number; l++){
+        count[l] = 0;
+        for(let i=0; i<localStorage.length; i++){
+            if(value[i]>step*l && value[i]<=step*(l+1)){
+                count[l]++;
+            }
+        }        
+    }
+
+    return count;
+}
+
+// あるデータ集合から割合を算出する関数
+function average_culculation(row_index, step, number){
+
+    let count = [];
+    let average = [];
+    let value = [];
+
+    value = get_multiple_item(row_index);
+    count = count_per_area(value, step, number);
+    
+    for(let i=0; i<number; i++){
+        if(count[i]==0){
+            average[i]=0;
+        }
+        if(count[i]!=0){
+            average[i] = 100*count[i]/localStorage.length;
+        }
+    }
+
+    return average;
+
+}
+
+//割合を更新する関数
+function update(){
+
+    const average = average_culculation(row_index, step, number);
+
+    for(let i=0; i<number; i++){
+        let round_average = Math.round(average[i]);
+        let id_name1 = "#number" + (i+1);
+        let id_name2 = "#rnumber" + (i+1);
+        let class_name = ".graph" + (i+1);
+        $(id_name1).html(round_average + "%");
+        $(id_name2).html(round_average + "%");
+        $(class_name).css("width", round_average+"%");
+    }
+}
+
+//1.Save クリックイベント
+$("#save").on("click",function(){
+    const key = localStorage.length+1;
+    const value = [];
+    value[0]= $("#date").val();
+    value[1]= $("#time").val();
+    value[2] = $("#clame_content").val();
+    value[3] = $("#response_content").val();
+    const stabilizearray = JSON.stringify(value);
+    localStorage.setItem(key,stabilizearray);
+    const html = '<tr><td>'+key+'</td><td>'+value[0]+'</td><td>'+value[1]+'分</td><td>'+value[2]+'</td><td>'+value[3]+'</td></tr>';
+    $("#list").append(html);
+    value[0]= $("#date").val("");
+    value[1]= $("#time").val("");
+    value[2] = $("#clame_content").val("");
+    value[3] = $("#response_content").val("");
+    update();
+});
+
+//2.clear クリックイベント
+$("#clear").on("click",function(){
+    localStorage.clear();
+    $("#list").empty();
+    update();
+});
+
+//3.ページ読み込み：保存データ取得表示
+for(let i=0; i<localStorage.length; i++){
+    let value = [];
+    const stabilizearray = localStorage.getItem(i+1);
+    value = JSON.parse(stabilizearray);
+    const html = '<tr><td>'+(i+1)+'</td><td>'+value[0]+'</td><td>'+value[1]+'分</td><td>'+value[2]+'</td><td>'+value[3]+'</td></tr>';
+    $("#list").append(html);
+    update();
+}
+
+
+
+
+</script>
+
+</html>
