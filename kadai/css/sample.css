@@ -124,7 +124,7 @@ td{
     width: 96%;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: start;
 }
 
 #ratio{
@@ -133,194 +133,285 @@ td{
     background-color: #bdbdbd;
     box-shadow: 3px 3px 3px 3px #8b8b8b;
     padding: 3px;
-    width: 30%;
+    height: 1570px;
+    width: 30%
 }
 
 #bar-graph {
     width: 70%;
-    height: 1000px;
     margin-bottom: 20px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: end; */
     position: relative;
-   
+    height: 1550px;
 }
 
 .bar-graph-wrap {
     position: absolute;
     top: 75px;
     width: 100%;
-    height: 915px;
+    height: 1500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    justify-content: space-around;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
   }
 
   .name{
-    font-size: 15px;
+    font-size: 20px;
     position: absolute;
     left: 10px;
   }
 
   .number{
-    font-size: 15px;
+    font-size: 20px;
     position: absolute;
     left: 120px;
 }
- 
- 
+
+#name1,#number1{
+  display: none;
+}
+#name2,#number2{
+  display: none;
+} 
+#name3,#number3{
+  display: none;
+} 
+#name4,#number4{
+  display: none;
+} 
+#name4,#number4{
+  display: none;
+} 
+#name5,#number5{
+  display: none;
+} 
+#name6,#number6{
+  display: none;
+} 
+#name7,#number7{
+  display: none;
+} 
+#name8,#number8{
+  display: none;
+}
+#name9,#number9{
+  display: none;
+} 
+#name10,#number10{
+  display: none;
+} 
+#name11,#number11{
+  display: none;
+}
+#name12,#number12{
+  display: none;
+} 
+#name13,#number13{
+  display: none;
+} 
+#name14,#number14{
+  display: none;
+} 
+#name15,#number15{
+  display: none;
+} 
+#name16,#number16{
+  display: none;
+} 
+#name17,#number17{
+  display: none;
+} 
+#name18,#number18{
+  display: none;
+} 
+#name19,#number19{
+  display: none;
+}
+#name20,#number20{
+  display: none;
+}
+#name21,#number21{
+  display: none;
+}  
+#name22,#number22{
+  display: none;
+}  
+#name23,#number23{
+  display: none;
+}  
+#name24,#number24{
+  display: none;
+}  
+#name25,#number25{
+  display: none;
+}  
+#name26,#number26{
+  display: none;
+}  
+#name27,#number27{
+  display: none;
+}  
+#name28,#number28{
+  display: none;
+}  
+#name29,#number29{
+  display: none;
+}  
+#name30,#number30{
+  display: none;
+}  
+
   .graph1 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
 
   .graph2 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph3 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph4 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph5 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph6 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph7 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph8 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph9 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph10 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph11 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph12 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph13 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph14 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph15 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph16 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph17 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph18 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph19 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph20 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph21 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph22 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph23 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph24 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph25 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph26 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph27 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph28 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph29 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
   .graph30 {
     background: #07d35f;
-    width: 88%;
+    width: 0%;
     height: 15px;
   }
